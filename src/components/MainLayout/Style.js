@@ -1,6 +1,7 @@
 import { css } from "@emotion/react";
 
 export const SLayout = css`
+  display: flex;
   width: 100%;
   border-radius: 10px;
   background-color: #fff;

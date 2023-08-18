@@ -20,7 +20,7 @@ function List({ title, list }) {
         {list.map((e) => {
           const isSelected = pathname.startsWith(e.pathname);
           return (
-            <li onClick={() => onPageMove(e.pathname)} key={e.name} css={S.SListBox(isSelected)}>
+            <li onClick={() => onPageMove(e.pathname)} key={e.id} css={S.SListBox(isSelected)}>
               <HiCalendar />
               <span css={S.SListName(isSelected)}>{e.name}</span>
               {!!e.count && <div css={S.SCount(isSelected)}>{e.count}</div>}

@@ -2,8 +2,14 @@ import React from "react";
 import * as S from "./Style";
 /** @jsxImportSource @emotion/react */
 import { HiMenu, HiSearch } from "react-icons/hi";
+import { useRecoilState } from "recoil";
+import { isSidebarShowState } from "../../../store/sidebarStore";
 
-function Header({ menuToggleOnClick, isShow }) {
+function Header() {
+  const [isSidebarShow, setIsSideBarShow] = useRecoilState(isSidebarShowState);
+  const menuToggleOnClick = () => {
+    setIsSideBarShow(!isSidebarShow);
+  }
   return (
     <div css={S.SLayout}>
       <div css={S.SContainer}>
@@ -12,7 +18,7 @@ function Header({ menuToggleOnClick, isShow }) {
           <HiMenu />
         </button>
       </div>
-      {isShow && (
+      {isSidebarShow && (
         <div css={S.SSearchBox}>
           <HiSearch css={S.SSearchIcon} />
           <input css={S.SInput} type="search" />

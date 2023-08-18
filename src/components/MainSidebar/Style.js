@@ -13,4 +13,5 @@ export const SLayout = (isShow) => css`
   border-top-right-radius: unset !important;
   border-bottom-right-radius: unset !important;
   overflow: hidden;
+  z-index: 1;
 `;
