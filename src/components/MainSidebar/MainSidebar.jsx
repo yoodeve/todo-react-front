@@ -4,11 +4,11 @@ import * as S from "./Style";
 import Header from "./Header/Header";
 import List from "./List/List";
 import { useRecoilState } from "recoil";
-import { isSidebarShowState } from "../../store/sidebarStore";
+import { rcIsSidebar } from "../../store/sidebarStore";
 
 function MainSidebar(props) {
-  const [isSidebarShow, setIsSideBarShow] = useRecoilState(isSidebarShowState);
-  
+  const [isSidebarShow, setIsSideBarShow] = useRecoilState(rcIsSidebar);
+
   const [mainMenuList, setMainMenuList] = useState({
     tasks: [
       {
@@ -66,10 +66,10 @@ function MainSidebar(props) {
     <div css={S.SLayout(isSidebarShow)}>
       <Header />
       {isSidebarShow && (
-        <>
+        <div>
           <List title="TASKS" list={mainMenuList.tasks} />
           <List title="LISTS" list={mainMenuList.lists} />
-        </>
+        </div>
       )}
     </div>
   );

@@ -3,13 +3,13 @@ import * as S from "./Style";
 /** @jsxImportSource @emotion/react */
 import { HiMenu, HiSearch } from "react-icons/hi";
 import { useRecoilState } from "recoil";
-import { isSidebarShowState } from "../../../store/sidebarStore";
+import { rcIsSidebar } from "../../../store/sidebarStore";
 
 function Header() {
-  const [isSidebarShow, setIsSideBarShow] = useRecoilState(isSidebarShowState);
+  const [isSidebarShow, setIsSideBarShow] = useRecoilState(rcIsSidebar);
   const menuToggleOnClick = () => {
     setIsSideBarShow(!isSidebarShow);
-  }
+  };
   return (
     <div css={S.SLayout}>
       <div css={S.SContainer}>

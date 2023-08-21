@@ -6,7 +6,7 @@ export const SLayout = (isShow) => css`
   background-color: #f5f5f5;
   border-radius: 10px;
   padding: 20px;
-  position: absolute;
+  position: relative;
   top: 0;
   transition: left 0.8s ease-in-out;
   left: ${isShow ? "0px" : "-200px"};
